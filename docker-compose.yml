@@ -11,3 +11,9 @@ services:
     environment:
       EXIM_SMARTHOST: "smtp.strato.de:465"
       EXIM_PASSWORD: "smtp.strato.de:${STRATO_USER}:${STRATO_PASSWORT}"
+    networks:
+      - exim
+networks:
+  exim:
+    name: "exim"
+    external: true
